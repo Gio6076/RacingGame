@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
         float turnInput = Input.GetAxis("Horizontal");
 
 
-        currentSpeed = Mathf.Lerp(currentSpeed, moveInput * maxSpeed, acceleration * Time.deltaTime);
+        currentSpeed = Mathf.Lerp(currentSpeed, moveInput * maxSpeed, acceleration * Time.fixedDeltaTime);
 
         Vector3 velocity = transform.forward * currentSpeed;
         velocity.y = rb.velocity.y;
